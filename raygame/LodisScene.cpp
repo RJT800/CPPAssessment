@@ -1,5 +1,8 @@
 #include "LodisScene.h"
 #include "TreasureSpawner.h"
+#include "Enemy.h"
+#include "Player.h"
+#include "Transform2D.h"
 
 void LodisScene::start()
 {
@@ -10,5 +13,12 @@ void LodisScene::start()
 
 	TreasureSpawner* spawner = new TreasureSpawner(1, spawnLocations, 4, 1);
 
+	Player* player = new Player();
+	player->getTransform()->setLocalPosition({ 500,500 });
+
+	Enemy* enemy = new Enemy(player, 50, 20, 700);
+
+	addActor(player);
+	addActor(enemy);
 	addActor(spawner);
 }
