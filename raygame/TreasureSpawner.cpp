@@ -35,7 +35,7 @@ void TreasureSpawner::update(float deltaTime)
 	MathLibrary::Vector2 location = m_locations[choice];
 
 	//Create a new treasure piece and at it to the scene using the random location.
-	Treasure* treasure = new Treasure(m_treasureScaleIncrease, location.x, location.y);
+	Treasure* treasure = new Treasure(m_treasureScaleIncrease, 10, location.x, location.y);
 	Engine::getCurrentScene()->addActor(treasure);
 
 
