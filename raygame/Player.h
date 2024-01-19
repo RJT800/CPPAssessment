@@ -6,7 +6,7 @@ class Player :
 
 public:
 
-    void update(float deltatime)
+   // void update(float deltatime)
     
 
 };
