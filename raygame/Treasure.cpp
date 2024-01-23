@@ -54,6 +54,7 @@ void Treasure::onCollision(Actor* other)
 
 void Treasure::update(float deltaTime)
 {
+	Actor::update(deltaTime);
 	//Increase the timer.
 	m_currentTime += deltaTime;
 
