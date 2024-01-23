@@ -22,7 +22,7 @@ Engine::Engine()
 void Engine::start()
 {
 	//Initialize window
-	int screenWidth = 700;
+	int screenWidth = 1600;
 	int screenHeight = 800;
 	InitWindow(screenWidth, screenHeight, "Intro To C++");
 	SetTargetFPS(0);
@@ -73,7 +73,7 @@ void Engine::run()
 
 		//Update scene
 		update(deltaTime);
-
+		
 		//Draw current scene
 		draw();
 	}
