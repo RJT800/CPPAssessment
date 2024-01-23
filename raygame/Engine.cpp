@@ -73,7 +73,7 @@ void Engine::run()
 
 		//Update scene
 		update(deltaTime);
-
+		
 		//Draw current scene
 		draw();
 	}
