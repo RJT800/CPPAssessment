@@ -9,7 +9,7 @@ public:
 	/// <param name="spawnDelay">The amount of time to wait before spawning a new piece of treasure.</param>
 	/// <param name="locations">The possible locations in the world that treasure can spawn.</param>
 	/// <param name="locationCount">The amount of locations in the location array given.</param>
-	/// <param name="treasureScaleIncrease">The amount that the player scale should increase after colliding with treasure.</param>
+	/// <param name="name">The name of this type of spawner.</param>
 	Spawner(float spawnDelay, MathLibrary::Vector2* locations, int locationCount, const char* name);
 
 	void update(float deltaTime) override;
