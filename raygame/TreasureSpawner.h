@@ -1,9 +1,8 @@
 #pragma once
-#include "Actor.h"
-#include "ActorArray.h"
-#include <Vector2.h>
+#include "Spawner.h"
 
-class TreasureSpawner : public Actor
+class TreasureSpawner :
+    public Spawner
 {
 public:
 	/// <param name="spawnDelay">The amount of time to wait before spawning a new piece of treasure.</param>
@@ -12,7 +11,7 @@ public:
 	/// <param name="treasureScaleIncrease">The amount that the player scale should increase after colliding with treasure.</param>
 	TreasureSpawner(float spawnDelay, MathLibrary::Vector2* locations, int locationCount, float treasureScaleIncrease);
 
-	void update(float deltaTime) override;
+	void spawnItem(MathLibrary::Vector2 location) override;
 
 private:
 	float m_spawnDelay;

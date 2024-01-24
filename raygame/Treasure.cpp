@@ -4,6 +4,7 @@
 #include "SpriteComponent.h"
 #include "CircleCollider.h"
 #include "Engine.h"
+#include "Enemy.h"
 
 Treasure::Treasure(float scaleIncrease, float despawnTime, float x, float y) : Actor(x, y, "Treasure")
 {
@@ -26,17 +27,34 @@ void Treasure::onCollision(Actor* other)
 	//Attempting to place the actor collided with into a player pointer variable.
 	Player* player = dynamic_cast<Player*>(other);
 
+	Engine::destroy(this);
+
 	//If the variable isn't null that means the other actor must be a player so...
 	if (player)
 	{
 		//...scale up the player.
 		MathLibrary::Vector2 newScale = player->getTransform()->getScale() + MathLibrary::Vector2(m_scaleIncrease, m_scaleIncrease);
 		player->getTransform()->setScale(newScale);
+
+		return;
+	}
+
+	Enemy* enemy = dynamic_cast<Enemy*>(other);
+
+	//If the variable isn't null that means the other actor must be an enemy so...
+	if (enemy)
+	{
+		//...scale up the enemy.
+		MathLibrary::Vector2 newScale = enemy->getTransform()->getScale() + MathLibrary::Vector2(m_scaleIncrease, m_scaleIncrease);
+		enemy->getTransform()->setScale(newScale);
+
+		return;
 	}
 }
 
 void Treasure::update(float deltaTime)
 {
+	Actor::update(deltaTime);
 	//Increase the timer.
 	m_currentTime += deltaTime;
 
