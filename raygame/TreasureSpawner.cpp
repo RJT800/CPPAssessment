@@ -14,6 +14,7 @@ TreasureSpawner::TreasureSpawner(float spawnDelay, MathLibrary::Vector2* locatio
 
 void TreasureSpawner::spawnItem(MathLibrary::Vector2 location)
 {
+	//Initialize new treasure and add it to the scene.
 	Treasure* treasure = new Treasure(m_treasureScaleIncrease, 10, location.x, location.y);
 	Engine::getCurrentScene()->addActor(treasure);
 }

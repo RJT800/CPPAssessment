@@ -14,6 +14,10 @@ public:
 
 	void update(float deltaTime) override;
 
+	/// <summary>
+	/// Spawns a given item at a location. Meant to be overidden in order to spawn a specific item.
+	/// </summary>
+	/// <param name="location">The location in the world to spawn the item.</param>
 	virtual void spawnItem(MathLibrary::Vector2 location) = 0;
 
 private:
