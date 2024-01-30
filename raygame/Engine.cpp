@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include "Transform2D.h"
 #include "SampleScene.h"
+#include "LodisScene.h"
 
 bool Engine::m_applicationShouldClose = false;
 Scene** Engine::m_scenes = new Scene*;
@@ -28,7 +29,7 @@ void Engine::start()
 	SetTargetFPS(0);
 
 	//Start the scene
-	m_currentSceneIndex = addScene(new SampleScene());
+	m_currentSceneIndex = addScene(new LodisScene());
 	m_scenes[m_currentSceneIndex]->start();
 }
 

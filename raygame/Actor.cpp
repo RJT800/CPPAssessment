@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Collider.h"
 #include "Component.h"
-
+#include "CircleCollider.h"
 Actor::Actor()
 {
     m_transform = new Transform2D(this);
@@ -21,6 +21,7 @@ Actor::Actor(float x, float y, const char* name = "Actor")
     m_transform = new Transform2D(this);
     m_transform->setLocalPosition({ x,y });
     m_name = name;
+
 }
 
 Component* Actor::getComponent(const char* componentName)
