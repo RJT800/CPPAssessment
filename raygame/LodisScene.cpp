@@ -28,6 +28,7 @@ void LodisScene::start()
 	CircleCollider* collider = new CircleCollider(25, player);
 	player->setCollider(collider);
 
-	addActor(player);	
+	addActor(player);
+	addActor(playerStar);
 	addActor(spawner);
 }

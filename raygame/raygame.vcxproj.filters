@@ -133,6 +133,9 @@
     <ClInclude Include="TreasureSpawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Images\bullet.png">
@@ -144,5 +147,6 @@
     <Image Include="..\Images\player.png">
       <Filter>Images</Filter>
     </Image>
+    <Image Include="Images\star_gold.png" />
   </ItemGroup>
 </Project>
